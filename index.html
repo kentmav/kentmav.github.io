@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body stretches to at least the full viewport height */
+}
+
+header {
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
+.Home {
+    text-align: center;
+    padding: 50px;
+}
+
+.Home h1 {
+    margin: 0 0 20px;
+}
+
+.About {
+    padding: 50px;
+}
+
+.About h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.Contact {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.Contact h1 {
+    margin-top: 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+
+        </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="./images/web_3059997.png" class="Logo" alt="Logo">
+        </h1>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#about-us">About</a>
+            <a href="#services">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+    <section class="Home">
+        <h1>Digitail Inc.</h1>
+        <img src="./images/lay2.webp" class="mountains" alt="Mountains">
+        <img src="./images/004.png" class="stars" alt="Stars">
+        <img src="./images/002.webp" class="layer" alt="Layer">
+        <img src="" class="light" alt="Light">
+    </section>
+    <section id="about-us" class="About">
+        <h1>About Me</h1>
+        <div class="about-content">
+            <img src="./images/profile.jpg" class="profile-photo" alt="Profile Photo">
+            <div class="about-text">
+                <p>Hello! I'm [Your Name], a passionate web designer with over [X] years of experience in creating stunning and user-friendly websites. I specialize in crafting custom websites that not only look great but also perform exceptionally well.</p>
+                <p>My journey in web design started with a fascination for digital art and technology. Over the years, I've honed my skills in HTML, CSS, JavaScript, and various web design tools. I believe in continuous learning and staying updated with the latest trends to deliver the best results for my clients.</p>
+                <p>At Digitail Inc., we take pride in our collaborative approach, working closely with clients to understand their needs and bring their vision to life. Whether you're looking to create a brand-new website or revamp an existing one, I'm here to help you achieve your goals.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="Contact">
+        <h1>Contact Us</h1>
+        <form action="#" method="POST" class="contact-form" id="contact-form">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <section id="services" class="services">
+        <h1>Our Services</h1>
+        <p>What we do</p>
+    </section>
+    <section id="sign" class="signup">
+        <h1>Sign Up</h1>
+    </section>
+    <script src="main.js"></script>
+    <script>
+        // JavaScript code goes here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the form element
+            const form = document.getElementById('contact-form');
+
+            // Add submit event listener to the form
+            form.addEventListener('submit', function(event) {
+                // Prevent default form submission
+                event.preventDefault();
+
+                // Validate form fields
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+
+                if (name === '' || email === '' || message === '') {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+
+                // If all fields are filled, you can proceed with form submission (e.g., send data to server)
+                // For demonstration, you can log the form data to console
+                console.log('Name:', name);
+                console.log('Email:', email);
+                console.log('Message:', message);
+
+                // Optionally, you can reset the form after successful submission
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

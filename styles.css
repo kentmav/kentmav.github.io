@@ -59,7 +59,7 @@ header nav a:hover{
     pointer-events: none;
 }
 .layer{
-    height: 115%;
+    height: 100%;
     bottom: 0;
 }
 .light{
